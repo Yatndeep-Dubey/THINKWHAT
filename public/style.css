@@ -1,0 +1,33 @@
+* {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .bg-header {
+    background: rgb(216, 227, 231);
+    /* border-radius: 0 0 0 70%; */
+    width: 100vw;
+    height: fit-content;
+    border-bottom-left-radius: 100% 300px;
+  }
+  
+  .color-primary {
+    color: rgb(39, 84, 115);
+  }
+  
+  /* bg colors */
+  .bg-primary {
+    background-color: rgb(39, 84, 115);
+  }
+  .bg-light {
+    background-color: rgb(216, 227, 231);
+  }
+  .bg-dark {
+    background-color: rgb(95, 128, 151);
+  }
+  .bg-footer {
+    background-color: rgb(36, 43, 48);
+  }

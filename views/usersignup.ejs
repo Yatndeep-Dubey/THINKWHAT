@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- title -->
+    <title>ThinkWh?t</title>
+    <style>
+        * {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bg-header {
+  background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width: 100vw;
+  height: fit-content;
+  border-bottom-left-radius: 100% 300px;
+}
+
+.color-primary {
+  color: rgb(39, 84, 115);
+}
+
+/* bg colors */
+.bg-primary {
+  background-color: rgb(39, 84, 115);
+}
+.bg-light {
+  background-color: rgb(216, 227, 231);
+}
+.bg-dark {
+  background-color: rgb(95, 128, 151);
+}
+.bg-footer {
+  background-color: rgb(36, 43, 48);
+}
+    </style>
+</head>
+
+<nav class="px-14 py-3 flex items-center justify-between bg-light">
+    <div class="bg-white w-fit h-fit">
+        <img src="/public/images/logo.png" alt="logo" class="h-24 w-24" />
+    </div>
+    <div class="flex border w-fit bg-white py-3 px-3 mx-10 w-[350px] rounded-full items-center space-x-3 text-lg">
+        <img src="./public/images/searchButton.png" class="h-5 w-5" />
+        <input type="text" placeholder="Search" class="border-none focus:outline-none" />
+    </div>
+
+    <div>
+        <ul class="flex text-xl space-x-14 mx-24">
+            <a href="/">
+                <li>Home</li>
+            </a>
+            <a href="/">
+                <li>About</li>
+            </a>
+            <a href="/">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </div>
+
+    <div class="font-bold">
+        <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+            Login
+        </button>
+        <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+            Sign Up
+        </button>
+    </div>
+</nav>
+
+<!-- login section -->
+<form method="POST">
+    
+<div class="rounded-lg border-2 p-5 w-fit h-fit my-20 mx-auto space-y-5 shadow-lg hover:shadow-2xl">
+    <p class="text-2xl">Register A new Account</p>
+    <a href="/auth/google">
+    <div class="rounded border-2 flex items-center px-28 py-3 space-x-3 cursor-pointer">
+        <img class="h-7" src="https://img.icons8.com/color/48/null/google-logo.png" />
+        <p>SignIn With Google</p>
+    </div>
+</a>
+    <div class="flex items-center space-x-3">
+        <div class="h-[1px] w-full bg-gray-300"></div>
+        <p class="text-gray-500">OR</p>
+        <div class="h-[1px] w-full bg-gray-300"></div>
+    </div>
+    <div>
+        <p class="text-lg">Email ID</p>
+        <input class="mb-5 border-2 rounded-sm w-full p-2" name="name" type="text" placeholder="Enter your email" />
+        <p class="text-lg">Email ID</p>
+        <input class="mb-5 border-2 rounded-sm w-full p-2" name="email" type="text" placeholder="Enter your email" />
+
+        <p class="text-lg">Password</p>
+        <input class="border-2 rounded-sm w-full p-2" name="password" type="password" placeholder="Enter your password" />
+
+        <div class="flex justify-end">
+            <a href="/" class="text-right pt-5 color-light">Forgot Password?</a>
+        </div>
+    </div>
+    <div>
+        <button  class="bg-primary text-white py-3 w-full rounded space-x-3 text-lg">
+            Sign Up
+        </button>
+    </div>
+    <div class="flex items-center space-x-3">
+        <p>Already Registered? </p>
+        <a href="/login">
+            <p class="color-light">Log In</p>
+        </a>
+    </div>
+</div>
+</form>
+
+<!-- footer -->
+<div class="bg-footer text-white items-center p-14 space-y-8">
+    <div class="flex justify-center items-center space-x-3">
+        <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="h-16">
+        <p class="text-5xl font-extrabold">ThinkWh?t</p>
+    </div>
+
+    <ul class="flex space-x-16 justify-center text-lg font-bold">
+        <li>Overview</li>
+        <li>Contact</li>
+        <li>Terms & Conditions</li>
+        <li>Privacy</li>
+        <li>Help</li>
+    </ul>
+
+    <ul class="flex space-x-10 justify-center">
+        <li><img src="./public/images/insta-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+    </ul>
+</div>
+
+
+<!-- Tailwind CSS script-->
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
