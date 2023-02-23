@@ -22,9 +22,29 @@ const getsignup = async (req,res)=>
 }
 const adduser = async (req,res)=>
 {
-    console.log(req.body.email)
-    try
-    {
+    const name = req.body.name
+    const email = req.body.email
+    const password=req.body.password
+    const confirmpassword = req.body.cpassword
+      // check if the are empty 
+      if (!email || !name || !password || !confirmpassword) 
+      {
+        res.render("usersignup", { err: "All Fields Required !"});
+    } 
+    else if (password != confirmpassword)
+     {
+        res.render("usersignup", { err: "Password Don't Match !"});
+     }
+
+     else{
+        const user = await userModel.findOne({email:email})
+        if(user)
+        {
+            res.render('usersignup',{err:"User Already Exist"})
+        }
+        else{
+            try
+        {
 
           const singleuser=new userModel(
           {
@@ -33,12 +53,15 @@ const adduser = async (req,res)=>
             password:req.body.password
           });
           const userData = await singleuser.save();
-           res.send("Added Successfully")
+           res.render('usersignup',{err:"Added Successfully"})
     }
     catch(error)
     {
         console.log(error.message)
     }
+        }
+    
+}
 }
 const loginuser = async (req,res)=>
 {
@@ -52,14 +75,15 @@ const loginuser = async (req,res)=>
         if(pass==password)
         {
             req.session.admin_id= user._id
-            res.redirect("/")
+            displayName=user.displayName
+            res.redirect('/?displayName='+displayName)
         }
         else{
-            res.send("Invalid Password")
+            res.render('userlogin',{error:"Invalid Password"})
         }
     }
     else{
-        res.send("Invalid Credentials")
+        res.render('userlogin',{error:"Invalid Credentials"})
     }
     }
     catch(error)

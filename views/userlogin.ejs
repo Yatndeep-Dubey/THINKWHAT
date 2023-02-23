@@ -14,7 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous"
+  />
     <!-- title -->
     <title>ThinkWh?t</title>
     <style>
@@ -90,6 +95,8 @@ body {
 <!-- login section -->
 <form method="POST">
     
+    
+    
 <div class="rounded-lg border-2 p-5 w-fit h-fit my-20 mx-auto space-y-5 shadow-lg hover:shadow-2xl">
     <p class="text-2xl">Login to your account</p>
     <a href="/auth/google">
@@ -98,6 +105,20 @@ body {
         <p>Login with Google</p>
     </div>
 </a>
+<% if(typeof error !== 'undefined'){ %>
+    <div
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <strong> Error </strong>
+      <%= error %>.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close">X</button>
+    </div>
+    <% } %>
     <div class="flex items-center space-x-3">
         <div class="h-[1px] w-full bg-gray-300"></div>
         <p class="text-gray-500">OR</p>
@@ -154,6 +175,11 @@ body {
 
 <!-- Tailwind CSS script-->
 <script src="https://cdn.tailwindcss.com"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"
+></script>
 </body>
 
 </html>

@@ -14,7 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous"
+  />
     <!-- title -->
     <title>ThinkWh?t</title>
     <style>
@@ -97,24 +102,36 @@ body {
         <img class="h-7" src="https://img.icons8.com/color/48/null/google-logo.png" />
         <p>SignIn With Google</p>
     </div>
-</a>
+</a><% if(typeof err !== 'undefined'){ %>
+    <div
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <strong> Error </strong>
+      <%= err %>.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close">X</button>
+    </div>
+    <% } %>
     <div class="flex items-center space-x-3">
         <div class="h-[1px] w-full bg-gray-300"></div>
         <p class="text-gray-500">OR</p>
         <div class="h-[1px] w-full bg-gray-300"></div>
     </div>
     <div>
-        <p class="text-lg">Email ID</p>
-        <input class="mb-5 border-2 rounded-sm w-full p-2" name="name" type="text" placeholder="Enter your email" />
+        <p class="text-lg">Name</p>
+        <input class="mb-5 border-2 rounded-sm w-full p-2" name="name" type="text" placeholder="Enter your name" />
         <p class="text-lg">Email ID</p>
         <input class="mb-5 border-2 rounded-sm w-full p-2" name="email" type="text" placeholder="Enter your email" />
 
         <p class="text-lg">Password</p>
         <input class="border-2 rounded-sm w-full p-2" name="password" type="password" placeholder="Enter your password" />
-
-        <div class="flex justify-end">
-            <a href="/" class="text-right pt-5 color-light">Forgot Password?</a>
-        </div>
+        <p class="text-lg"> Confirm Password</p>
+        <input class="border-2 rounded-sm w-full p-2" name="cpassword" type="password" placeholder="Enter your password" />
+        
     </div>
     <div>
         <button  class="bg-primary text-white py-3 w-full rounded space-x-3 text-lg">
@@ -156,6 +173,11 @@ body {
 
 <!-- Tailwind CSS script-->
 <script src="https://cdn.tailwindcss.com"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"
+></script>
 </body>
 
 </html>

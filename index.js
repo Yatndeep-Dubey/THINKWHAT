@@ -47,9 +47,30 @@ app.use(session({
   }));
   var passport = require('passport');
   var userProfile;
+
   app.get("/",(req,res)=>
 {
-    res.render('index',{message:userProfile})
+    if(typeof userProfile!=='undefined')
+    {
+        
+        console.log("If chal rha hai")
+        
+        res.render('index',{message:userProfile.displayName})
+    }
+    else
+    {
+        console.log("Else chal rha hai")
+        const displayName=req.query.displayName
+        userProfile=
+        {
+           displayName:displayName
+        }
+        
+        res.render('index',{message:userProfile.displayName})  
+       
+        
+    } 
+    
 })
  
 app.use(passport.initialize());
@@ -89,16 +110,13 @@ passport.serializeUser(function(user, cb) {
       // Successful authentication, redirect success.
       res.redirect('/');
     });
-    app.get('/logout', function(req, res, next){
-        req.logout(function(err) {
-          if (err) { return next(err); }
-          req.session.destroy(()=>
-          {
-            res.redirect('/')
-          }
-            
-          );
-         
-        });
-      })
-    
+    app.get("/logout",(req,res)=>
+    {
+        req.logout(()=>
+        {
+            userProfile=undefined;
+        req.destroy.session;
+        res.redirect('/')
+        })
+        
+    })
