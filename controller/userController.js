@@ -63,6 +63,7 @@ const adduser = async (req,res)=>
     
 }
 }
+/*
 const loginuser = async (req,res)=>
 {
     try{
@@ -91,9 +92,11 @@ const loginuser = async (req,res)=>
         console.log(error.message)
     }
 }
+*/
+
 module.exports = {
     getLoginpage,
     getsignup,
     adduser,
-    loginuser
+   // loginuser
 }

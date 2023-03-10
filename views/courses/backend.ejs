@@ -1,13 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWBackend</title>
+  <!-- meta tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- stylesheet -->
+
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+
+  <!-- title -->
+  <title>ThinkWh?t</title>
+  <style>
+  * {
+      font-family: "Lato", sans-serif;
+    }
+
+    
+    body {
+      overflow-x: hidden;
+    }
+
+    .bg-header {
+      background: rgb(216, 227, 231);
+      /* border-radius: 0 0 0 70%; */
+      width: 2313px;
+      height: 490px;
+      /* top:-235px;
+  left:-436px; */
+      border-bottom-left-radius: 190% 800px;
+      border-bottom-right-radius: 190% 800px;
+    }
+
+    .color-primary {
+      color: rgb(39, 84, 115);
+    }
+
+    .color-light {
+      color: rgb(34, 116, 172);
+    }
+
+    .color-yellow {
+      color: rgb(254, 181, 33);
+    }
+
+    /* bg colors */
+    .bg-primary {
+      background-color: rgb(39, 84, 115);
+    }
+
+    .bg-light {
+      background-color: rgb(216, 227, 231);
+    }
+
+    .bg-dark {
+      background-color: rgb(95, 128, 151);
+    }
+
+    .bg-footer {
+      background-color: rgb(36, 43, 48);
+    }
+
+    .bg-whitesmoke {
+      background-color: rgb(217, 217, 217);
+    }
+
+    /* border color */
+    .border-primary {
+      border-color: rgb(39, 84, 115);
+    }
+
+    .sleft {
+      position: absolute;
+      right: 230px;
+    }
+
+    /* Hamburger Menu */
+    
+    /* Hamburger Menu */
+   
+@media screen and (min-width:480px)
+{
+  .dp{
+             display:block;
+    }
+}
+@media  screen and (max-width:480px) {
+  .dp{
+     display: none;
+  }
+  
+}
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
+        width: 2313px;
+        height: 940px;
+        border-bottom-left-radius: 190% 200px;
+        border-bottom-right-radius: 190% 200px;
+      }
+    }
+    
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
+    }
+
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+    @media screen and (max-width:330px) {
+      .moblogo
+      {
+        position: absolute;
+        right:240px;
+        
+      }
+      .sleft
+      { 
+        right:180px;
+
+      }
+      .sz
+      {
+        width: 140px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
+      }
+    }
+
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
+    }
+
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+
+    @media screen and (max-width:330px) {
+      .moblogo {
+        position: absolute;
+        right: 240px;
+
+      }
+
+      .sleft {
+        right: 180px;
+
+      }
+
+      .sz {
+        width: 140px;
+      }
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+
+/* hamburger */
+svg {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.active svg {
+  transform: rotate(90deg);
+}
+path {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+path:nth-child(1) {
+  transform-origin: 36% 40%;
+}
+path:nth-child(2) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(3) {
+  transform-origin: 35% 63%;
+}
+path:nth-child(4) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(5) {
+  transform-origin: 61% 52%;
+}
+path:nth-child(6) {
+  transform-origin: 62% 52%;
+}
+.active path:nth-child(1) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+.active path:nth-child(2) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(3) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(4) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(5) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(6) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+
+/* curved bg */
+.border-curved {
+  border-radius: 0% 0% 90% 90%;
+}
+
+/* bg colors */
+.bg-light {
+  background-color: rgb(216, 227, 231);
+}
+.navbar{
+  height:100px;
+  transition: all 0.5s ease-out;
+  background-color: rgb(216, 227, 231);
+}
+.v-class
+{
+  height: 300px;
+}
+.opn
+{
+  opacity:0;
+  transition: all 0.2s ease-out;
+}
+.h-nav
+{
+  opacity:1
+}
+
+
+  </style>
 </head>
+
 <body>
-    <h1>Shree ganeshay namah</h1>
-    <p>BAckend Development</p>
+  
+    <nav class="bg-light navbar">
+      <!-- desktop menu -->
+      <div class="px-14 py-7 hidden md:flex items-center justify-between">
+        <div class="bg-white w-fit h-fit">
+          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+        </div>
+        <div class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
+          <img src="./public/images/searchButton.png" class="h-5 w-5" />
+          <input type="text" placeholder="Search" class="border-none focus:outline-none" />
+        </div>
+
+        <div>
+          <ul class="flex text-xl space-x-14 mx-24">
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/">
+              <li>About</li>
+            </a>
+            <a href="/">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="font-bold flex">
+          <a href="/login">
+            <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              Login
+            </button>
+          </a>
+          <a href="/signup">
+            <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              Sign Up
+            </button>
+          </a>
+        </div>
+      </div>
+     <nav class="navbar">
+      <!-- mob menu -->
+      <div class="flex justify-between items-center md:hidden">
+        <div class="flex gap-5 items-center">
+          <div>
+            <img src="./public/logo.png" alt="logo image" class="h-20 w-20" />
+          </div>
+
+          <div
+            class="flex border bg-white py-2  px-2 gap-2 rounded-full items-center h-fit"
+          >
+            <img src="./public/searchButton.png" class="h-5" />
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-none focus:outline-none bg-transparent w-[140px] sm:w-40"
+            />
+          </div>
+        </div>
+
+        <!-- hamburger -->
+        
+        <div class="burger" onclick="this.classList.toggle('active')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 200 200"
+            class="cursor-pointer"
+          >
+            <g stroke-width="6.5" stroke-linecap="round">
+              <path
+                d="M72 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M72 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <!-- insert mob menu below -->
+        
+      </div>
+      <div class="nav-list op  flex justify-center items-center">
+        <ul class="opn text-lg  font-bold space-y-2">
+            <li>Home</li>
+            <li>About</li>
+            <li>contact</li>
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
+      </div>
+    </nav>
+    </nav>
+
+
+    <!-- header section -->
+    <div class="bg-light flex flex-col-reverse items-center px-5 md:px-16 py-14 sm:flex-row">
+      <div class="w-full  sm:space-y-3">
+        <p class="color-primary text-2xl md:text-5xl font-extrabold">Start Your Learning as</p>
+        <p class="color-yellow -mt-1 text-2xl md:text-5xl font-extrabold">Frontend Developer</p>
+        <p class="color-primary mt-2 md:text-lg text-sm">
+          This program advance your career as a Web Developer. You will learn
+          top skills and be a jack of all trades and create entire website by
+          yourself.
+        </p>
+      </div>
+      <div class="w-full flex justify-end items-center">
+        <img src="./public/man-on-laptop.png" alt="avatar" class="md:h-80" />
+      </div>
+    </div>
+
+    <!-- course detail summary -->
+    <div class="bg-white  shadow-xl w-auto flex flex-col sm:w-[840px] sm:flex sm:flex-row justify-center items-center space-y-2 sm:space-x-10 sm:space-y-0 mx-auto p-5
+       rounded-xl  -mt-10 ">
+      <div class=" flex flex-row w-[400px]  sm:px-0 justify-center  sm:justify-between ">
+           <div class="flex items-center space-x-2 pr-5 sm:pr-0">
+            <img src="https://img.icons8.com/android/24/null/clock.png"
+            class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+            <p class="text-xs font-bold sm:text-lg  ">
+              Course Duration
+              </br>
+              2 Months
+            </p>
+           </div>
+           <!--Dusri heading -->
+           <div class="flex items-center space-x-2 pl-5">
+            <img src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
+            class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+            <p class="text-xs font-bold sm:text-lg  ">
+              Program Fee
+              </br>
+              ₹499
+            </p>
+           </div>
+      </div>
+      <div >
+        <button
+        class=" w-[140px]  md:w-[200px]  bg-primary text-white sm:py-4 sm:px-12 sm:mx-10 px-3 py-2 font-bold sm:font-extrabold rounded-full"
+        id="openApplyMenu" onclick="openApplyMenu()">
+        Apply Now
+      </button>
+
+      </div>
+    </div>
+        <!-- pop up menu -->
+        <div class=" absolute hidden  w-full lg:w-full top-40 " id="applyMenu">
+          <div
+            class="bg-white  py-5  lg:px-12 rounded-lg mx-auto w-[360px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8">
+            <p class="text-right mx-5 text-3xl cursor-pointer" id="closeApplyMenu" onclick="closeApplyMenu()">
+              X
+            </p>
+            <p class="text-2xl text-center font-extrabold">Application Form</p>
+            <div class="flex flex-col">
+              <label for="name " class="mx-2">Name</label>
+              <input type="text" name="name" id="name" class="border-2 border-gray-300 rounded-lg p-2 md:w-[24rem] mx-2 "
+                placeholder="Full Name" />
+            </div>
+            <div class="flex flex-col">
+              <label for="number" class="mx-2">Mobile Number</label>
+              <input type="number" name="mobile number" id="mobile"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="+123456789" />
+            </div>
+            <div class="flex flex-col">
+              <label for="email" class="mx-2">Email ID</label>
+              <input type="email" name="email" id="email" class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]"
+                placeholder="example@example.com" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="upi" class="mx-2">UPI ID</label>
+              <input type="text" name="upi" id="upi" class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]"
+                placeholder="upi@bank" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="transaction" class="mx-2">Transaction ID</label>
+              <input type="text" name="transaction" id="transaction"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="transactionid5494cwvev" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="payment method" class="mx-2">Payment Method</label>
+              <input type="text" name="payment method" id="payment"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="UPI" />
+            </div>
+            <div class="h-28 w-28 flex justify-center items-center border mx-auto">
+              QR Code
+            </div>
+    
+            <p class="mx-2">
+              Program fee per month: <strong>&#x20B9;200</strong> &nbsp;
+              <del class="text-gray-500 text-xs">&#x20B9;1000</del>
+            </p>
+            <button class="bg-primary text-white text-center md:w-full w-[250px] md:mx-0 mx-10 py-3 rounded-full">
+              Pay Now
+            </button>
+          </div>
+        </div>
+    
+
+    <!-- about section -->
+    <div class="text-center px-7 md:px-28 my-[160px] space-y-7">
+      <p class="color-primary text-4xl font-extrabold">About</p>
+      <p>
+        In this course we will learn to create frontend portion of websites. To
+        become a web developer it is important that we learn this because it
+        connects two vital areas: the web designing and the backend development
+        . This platform will help to land you a good job with a handsome salary
+        in this domain is to get a web developer certification.
+      </p>
+    </div>
+
+
+
+    <!-- Courses Highlights section -->
+
+    <div class="mx-auto py-10 w-full flex flex-col items-center">
+      <p class="color-primary text-4xl font-extrabold text-center mb-10 ">
+        Courses Highlights
+      </p>
+      <div class="grid grid-cols-3 grid-rows-3 gap-[15px] sm:gap-12  sm:pl-[95px]  ">
+
+        <div class="flex items-center sm:flex-row flex-col text-center items-center sm:space-x-7 ">
+          <img src="./public/stairs.png" alt="Beginner Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Beginner Friendly</p>
+        </div>
+
+        <div class="  sm:mr-0 flex sm:flex-row flex-col text-center items-center md:space-x-7  ">
+          <img src="./public/certificate.png" alt="Mobile Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Certification of Training</p>
+        </div>
+
+        <div class=" mr-5 sm:mr-0 flex sm:flex-row flex-col text-center items-center md:space-x-7 ">
+          <img src="./public/lift-to-talk.svg" alt="Mobile Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Mobile Friendly</p>
+        </div>
+
+        <div class="flex  sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/learnOnline.png" alt="Learn Online" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Learn Online</p>
+        </div>
+
+        <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/download.svg" alt="Downloadable Content" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Downloadable Content</p>
+        </div>
+
+        <div class="flex mr-4 sm:mr-0 sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/assignment-add.svg" alt="Assignments" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Assignments</p>
+        </div>
+
+        <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/doubt-removebg-preview.png" alt="24 X 7 Doubt clearning" class="h-[50px]  w-[50px] bg-light rounded-xl " />
+          <p class="sm:text-lg text-sm">Doubt clearning</p>
+        </div>
+
+        <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/bulb.png" alt="Hands-On Project Based Learning" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Hands-On Project Based Learning</p>
+        </div>
+
+        <div class="flex mr-5 sm:mr-0 sm:flex-row flex-col text-center items-center md:space-x-7">
+          <img src="./public/schedule.svg" alt="Lifetime Access" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Lifetime Access</p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- learning path -->
+    <div class="my-20 space-y-14">
+      <p class="color-primary text-4xl font-extrabold text-center mb-10">
+        Learning Path
+      </p>
+      <div class="flex items-center justify-center flex-col md:flex-row gap-10 md:gap-0">
+        <div class="md:space-y-2 flex flex-col items-center">
+          <div
+            class="bg-whitesmoke border-primary border-[6px] rounded-3xl h-20 w-20 1.2px [transform:_rotate(41.36deg)] flex justify-center items-center">
+            <div class="bg-primary p-3 h-12 w-12 rounded-2xl flex justify-center items-center">
+              <p class="text-xl font-extrabold text-white [transform:_rotate(-41.36deg)]">
+                1
+              </p>
+            </div>
+          </div>
+          <p class="mt-2 " >Beginner</p>
+        </div>
+
+        <p class="-mt-12 hidden md:flex">
+          ....................................................
+        </p>
+        <p style="line-height:0.3;" class="-mt-10 sm:hidden">
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+        </p>
+
+        <div class="space-y-3 flex flex-col items-center -mt-5">
+          <div
+            class="bg-whitesmoke border-primary border-[6px] rounded-3xl h-20 w-20 1.2px [transform:_rotate(41.36deg)] flex justify-center items-center">
+            <div class="bg-primary p-3 h-12 w-12 rounded-2xl flex justify-center items-center">
+              <p class="text-xl font-extrabold text-white [transform:_rotate(-41.36deg)]">
+                2
+              </p>
+            </div>
+          </div>
+          <p >Intermediate</p>
+        </div>
+        <p class="-mt-12 hidden md:flex">
+          ....................................................
+        </p>
+        <p style="line-height:0.3;" class="-mt-10 sm:hidden">
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+        </p>
+
+        <div class="space-y-3 flex flex-col items-center -mt-5">
+          <div
+            class="bg-whitesmoke border-primary border-[6px] rounded-3xl h-20 w-20 1.2px [transform:_rotate(41.36deg)] flex justify-center items-center">
+            <div class="bg-primary p-3 h-12 w-12 rounded-2xl flex justify-center items-center">
+              <p class="text-xl font-extrabold text-white [transform:_rotate(-41.36deg)]">
+                3
+              </p>
+            </div>
+          </div>
+          <p>Advanced</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <div class="bg-footer text-white items-center p-14 space-y-1 md:hidden">
+
+
+      <ul class="flex flex-row text-s space-x-4 sm:flex-row  items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold mb-2">
+        <li>Overview</li>
+        <li>Terms&Conditions</li>
+        <li>Contact</li>
+      </ul>
+      <ul class="text-s   flex flex-row items-center justify-center font-bold  mb-8" >
+        <li style="margin-left:-10px">Privacy</li>
+        <li style="margin-left:162px;">Help</li>
+      </ul>
+      <div class="flex justify-center items-center space-x-3 py-[15px]">
+        <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
+      </div>
+  
+      <ul class="flex space-x-10 justify-center mt-4">
+        <li><img src="./public/images//insta-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+      </ul>
+    </div>
+  <!--desktop footer-->
+  
+  <div class=" dp bg-footer text-white items-center p-14 space-y-8">
+    <div class="flex justify-center items-center space-x-3">
+      <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="h-16" />
+      <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
+    </div>
+  
+    <ul class="flex sm:flex-row flex-col items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold">
+      <li>Overview</li>
+      <li>Contact</li>
+      <li>Terms & Conditions</li>
+      <li>Privacy</li>
+      <li>Help</li>
+    </ul>
+  
+    <ul class="flex space-x-10 justify-center">
+      <li><img src="./public/images//insta-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+    </ul>
+  </div>
+  
+    <!-- Tailwind CSS script-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  const burger = document.querySelector('.burger')
+      const navbar= document.querySelector('.navbar')
+      const opn = document.querySelector('.opn')
+      burger.addEventListener('click',()=>
+      {
+        console.log("Button chala hai ");
+        navbar.classList.toggle('v-class')
+        opn.classList.toggle('h-nav')
+      })
+      </script>
 </body>
+
 </html>

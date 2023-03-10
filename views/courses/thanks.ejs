@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- title -->
+    <title>ThinkWh?t</title>
+    <style>
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bg-header {
+  background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width: 100vw;
+  height: fit-content;
+  border-bottom-left-radius: 100% 300px;
+}
+
+.color-primary {
+  color: rgb(39, 84, 115);
+}
+.color-light {
+  color: rgb(34, 116, 172);
+}
+.color-yellow {
+  color: rgb(254, 181, 33);
+}
+
+/* bg colors */
+.bg-primary {
+  background-color: rgb(39, 84, 115);
+}
+.bg-light {
+  background-color: rgb(216, 227, 231);
+}
+.bg-dark {
+  background-color: rgb(95, 128, 151);
+}
+.bg-footer {
+  background-color: rgb(36, 43, 48);
+}
+.bg-whitesmoke {
+  background-color: rgb(217, 217, 217)
+}
+
+/* border color */
+.border-primary {
+  border-color: rgb(39, 84, 115);
+}
+    </style>
+  </head>
+
+  <body>
+    <nav class="px-14 py-3 flex items-center justify-between bg-light border-b">
+      <div class="bg-white w-fit h-fit">
+        <img src="../public/images/logo.png" alt="logo" class="h-24 w-24" />
+      </div>
+      <div
+        class="flex border w-fit bg-white py-3 px-3 mx-10 w-[350px] rounded-full items-center space-x-3 text-lg"
+      >
+        <img src="../public/images/searchButton.png" class="h-5 w-5" />
+        <input
+          type="text"
+          placeholder="Search"
+          class="border-none focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <ul class="flex text-xl space-x-14 mx-24">
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="/">
+            <li>About</li>
+          </a>
+          <a href="/">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="font-bold">
+        <button
+          class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg"
+        >
+          Login
+        </button>
+        <button
+          class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg"
+        >
+          Sign Up
+        </button>
+      </div>
+    </nav>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    </body>
+     <!-- Tailwind CSS script-->
+</html>

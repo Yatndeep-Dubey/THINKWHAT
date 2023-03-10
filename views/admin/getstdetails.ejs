@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWADMINPANEL</title>
+</head>
+<style>
+    .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+</style>
+<body>
+    <form method="post">
+    <input type="text" name="courseID" placeholder="Enter the Course id">
+    <button type="submit">Submit</button>
+</form>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>CourseID</th>
+                <th>Course Name</th>
+                <th>Transaction ID</th>
+                <th>Status</th>
+                <th>Action</th>
+                <th>Verification-Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  students.forEach(element => { %>
+                 
+                <tr>
+                    <td><%= element.name %></td>
+                    <td><%= element.email%></td>
+                    <td><%=element.mobile%></td>
+                    <td><%=element.courseID%></td>
+                    <td><%=element.courses%></td>
+                    <td><%=element.transactionID%></td>
+                    <td><%=element.isVerified%></td>
+                    <td><a href="/admin/updatepage?id=<%=element._id%>"><button>Update</button></a></td>
+                    <td><%=element.verifyingadmin%></td>
+                  
+                   
+                  </tr>
+              
+            <%}) %>
+            <!-- and so on... -->
+        </tbody>
+    </table>
+</body>
+</html>

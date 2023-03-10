@@ -15,7 +15,7 @@ const loginSchema= new Schema({
   is_admin:{
     type:Number,
     default:0
-  },
+  },  
   is_verified:{
     type:Number,
     default:0
