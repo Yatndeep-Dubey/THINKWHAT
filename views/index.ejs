@@ -22,11 +22,9 @@
       font-family: "Lato", sans-serif;
       scroll-behavior: smooth;
     }
-
     body {
       overflow-x: hidden;
     }
-
     .bg-header {
       background: rgb(216, 227, 231);
       /* border-radius: 0 0 0 70%; */
@@ -37,50 +35,39 @@
       border-bottom-left-radius: 190% 800px;
       border-bottom-right-radius: 190% 800px;
     }
-
     .color-primary {
       color: rgb(39, 84, 115);
     }
-
     .color-light {
       color: rgb(34, 116, 172);
     }
-
     .color-yellow {
       color: rgb(254, 181, 33);
     }
-
     /* bg colors */
     .bg-primary {
       background-color: rgb(39, 84, 115);
     }
-
     .bg-light {
       background-color: rgb(216, 227, 231);
     }
-
     .bg-dark {
       background-color: rgb(95, 128, 151);
     }
-
     .bg-footer {
       background-color: rgb(36, 43, 48);
     }
-
     .bg-whitesmoke {
       background-color: rgb(217, 217, 217);
     }
-
     /* border color */
     .border-primary {
       border-color: rgb(39, 84, 115);
     }
-
     .sleft {
       position: absolute;
       right: 230px;
     }
-
     /* Hamburger Menu */
     
     /* Hamburger Menu */
@@ -111,7 +98,6 @@
     .bg-list {
       background-color: rgba(174, 211, 224, 0.8);
     }
-
     .moblogo {
       position: absolute;
       right: 280px;
@@ -126,7 +112,6 @@
       .sleft
       { 
         right:180px;
-
       }
       .sz
       {
@@ -139,35 +124,26 @@
         /* border-radius: 0 0 0 70%; */
       }
     }
-
     .bg-list {
       background-color: rgba(174, 211, 224, 0.8);
     }
-
     .moblogo {
       position: absolute;
       right: 280px;
     }
-
     @media screen and (max-width:330px) {
       .moblogo {
         position: absolute;
         right: 240px;
-
       }
-
       .sleft {
         right: 180px;
-
       }
-
       .sz {
         width: 140px;
       }
     }
     @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-
 /* hamburger */
 svg {
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -218,12 +194,10 @@ path:nth-child(6) {
 .active path:nth-child(6) {
   transform: translateX(9px) translateY(1px) rotate(45deg);
 }
-
 /* curved bg */
 .border-curved {
   border-radius: 0% 0% 90% 90%;
 }
-
 /* bg colors */
 .bg-light {
   background-color: rgb(216, 227, 231);
@@ -246,8 +220,6 @@ path:nth-child(6) {
 {
   opacity:1
 }
-
-
   </style>
 </head>
 
@@ -277,7 +249,7 @@ path:nth-child(6) {
             </a>
           </ul>
         </div>
-
+        <%=message%>
         <% if (message == undefined)
 { %>
   <div class="font-bold">

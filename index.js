@@ -14,6 +14,14 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const cookieParser = require('cookie-parser')
 const { name } = require('ejs');
 const auth = require('./controller/auth');
+const session = require('express-session')
+app.use(session(
+    {
+        secret:"Mysecret",
+        resave:false,
+        saveUninitialized:false
+    }
+))
 
 app.use(bodyParser.urlencoded());
 app.use(cookieParser())
@@ -31,7 +39,8 @@ app.listen(port,()=>
 
 app.get("/contact",(req,res)=>
 {
-    res.render('contact')
+    req.session.viewCount +=1;
+    res.send("Your visited times"+req.session.viewCount)
 })
 app.get("/about",(req,res)=>
 {

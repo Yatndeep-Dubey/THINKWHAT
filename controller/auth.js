@@ -11,7 +11,12 @@ const clientID = process.env.CLIENTID
 const clientSecret = process.env.CLIENTSECRET
 
 
-
+const session = require('express-session')
+app.use(session({
+    secret:"My Secret",
+    resave:false,
+    saveUninitialized:false
+}))
 
 const { name } = require('ejs');
 var userProfile;
@@ -41,8 +46,7 @@ app.get("/about",(req,res)=>
 /////////// Sign In With GOOGLE..../////////..............######
 app.get("/",(req,res)=>
 {
-    const name = req.query.displayName
-    res.render('index',{message:userProfile})
+    res.render('index',{message:req.session.userProfile})
 })
 
 /// passport work
@@ -104,8 +108,8 @@ app.get('/googleRedirect', passport.authenticate('google'),(req, res)=>{
         data: user
         }, 'secret');
     res.cookie('jwt', token)
-    userProfile=user.displayName
-    userEmail=user.email
+     req.session.userProfile=user.displayName
+    req.session.userEmail=user.email
     res.redirect('/')
 })
 function FindOrCreate(user){
@@ -157,8 +161,8 @@ app.get("/login",(req,res)=>
                                 }, 'secret');
                             res.cookie('jwt', token)
                             displayName=user.displayName
-                            userProfile=user.displayName
-                            userEmail=user.email
+                            req.session.userProfile=user.displayName
+                            req.session.userEmail=user.email
                                 res.redirect('/')
                     }
                     else
@@ -188,7 +192,6 @@ app.get("/login",(req,res)=>
   //courserouters
   const getfrontend = async (req,res)=>
 {
-    res.render('frontend',{username:userProfile,usermail:userEmail})
 }
 const getbackend = async (req,res)=>
 {
@@ -203,7 +206,7 @@ const getcloud = async (req,res)=>
 const getuiux = async (req,res)=>
 {
        
-       res.render('uiux',{username:userProfile,usermail:userEmail})
+       res.render('uiux',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getflutter = async (req,res)=>
 {
@@ -231,6 +234,7 @@ app.get('/logout', (req, res, next) => {
     res.clearCookie('jwt')
      res.redirect('/')
      userProfile=undefined;
+     req.session.destroy();
   })
   module.exports =
   {
