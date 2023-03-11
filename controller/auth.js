@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser')
 // Env variables.........
 const clientID = process.env.CLIENTID
 const clientSecret = process.env.CLIENTSECRET
+const callbackurl = process.env.CBURL
 
 
 const session = require('express-session')
@@ -79,7 +80,7 @@ passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
 passport.use(new GoogleStrategy({
     clientID:clientID,
     clientSecret:clientSecret,
-    callbackURL: "http://localhost:3000/googleRedirect"
+    callbackURL:callbackurl
   },
   function(accessToken, refreshToken, profile, cb) {
       //console.log(accessToken, refreshToken, profile)
