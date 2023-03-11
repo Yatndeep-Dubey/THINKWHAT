@@ -101,7 +101,7 @@ let info = transporter.sendMail({
         from: smail, // sender address
         to: receiver, // list of receivers
         subject: subjectto, // Subject line
-        html: message+'<a href="http://localhost:3000/verify?id='+user_id+'">Click Here To Verify</a>'
+        html: message+'<a href="https://thinkwhat.onrender.com/verify?id='+user_id+'">Click Here To Verify</a>'
        
     },
     function(error) {
