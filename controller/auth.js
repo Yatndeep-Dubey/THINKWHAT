@@ -193,16 +193,17 @@ app.get("/login",(req,res)=>
   //courserouters
   const getfrontend = async (req,res)=>
 {
+    res.render('frontend',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getbackend = async (req,res)=>
 {
     
-     res.render('backend',{message:userProfile})
+     res.render('backend',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getcloud = async (req,res)=>
 {
    
-        res.render('cloud',{message:userProfile})
+        res.render('cloud',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getuiux = async (req,res)=>
 {
@@ -212,22 +213,22 @@ const getuiux = async (req,res)=>
 const getflutter = async (req,res)=>
 {
 
-       res.render('flutter',{message:userProfile},)
+       res.render('flutter',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getReact = async (req,res)=>
 {
-     res.render('react',{message:userProfile})
+     res.render('react',{username:req.session.userProfile,usermail:req.sessionuserEmail})
 
 }
 const getAngular = async (req,res)=>
 {
     
-     res.render('Angular',{message:userProfile})
+     res.render('Angular',{username:req.session.userProfile,usermail:req.sessionuserEmail})
 }
 const getdsa = async (req,res)=>
 {
     
-    res.render('dsa',{message:userProfile})
+    res.render('dsa',{username:req.session.userProfile,usermail:req.sessionuserEmail})
 }
 app.get('/logout', (req, res, next) => {
     // manually set cookie headers, cause `req.logout` does not work

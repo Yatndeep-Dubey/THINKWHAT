@@ -9,6 +9,8 @@ const courseController= require('../controller/courseController')
 
 
 studentRouter.post("/uiuxform",studentController.postuiuxform)
+
+
 //studentRouter.post("/addstudent",courseController.addstudentincourse)
 
 //studentRouter.get("/updatepage",studentController.getupdatepage)

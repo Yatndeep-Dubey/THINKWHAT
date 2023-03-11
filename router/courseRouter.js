@@ -16,8 +16,18 @@ courseRouter.get("/uiux",authController.getuiux)
 courseRouter.get("/dsa",authController.getdsa)
 courseRouter.get("/angular",authController.getAngular)
 courseRouter.get("/react",authController.getReact)
-courseRouter.post("/uiux",studentController.postuiuxform)
 courseRouter.get("/thanks",studentController.getthankspage)
+
+
+
+courseRouter.post("/frontend",studentController.postuiuxform) 
+courseRouter.post("/backend",studentController.postuiuxform)  
+courseRouter.post("/flutter",studentController.postuiuxform)
+courseRouter.post("/cloud",studentController.postuiuxform)
+courseRouter.post("/uiux",studentController.postuiuxform)
+courseRouter.post("/react",studentController.postuiuxform)
+courseRouter.post("/angular",studentController.postuiuxform)
+courseRouter.post("/dsa",studentController.postuiuxform)
 
 //courseRouter.post("/addcourse",courseController.postcourse)
 //courseRouter.get("/admin/coursedetails",courseController.getcoursedetails)

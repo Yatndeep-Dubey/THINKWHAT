@@ -75,15 +75,15 @@ const postuiuxform = async (req,res)=>
           sendmail2(receiver);
          res.render('thanks');
 
-}
+   }
 
-catch(error)
-{
-    console.log(error.messsage);
+            catch(error)
+            {
+                console.log(error.messsage);
+            }
 }
+/// frontend development
 
-       
-}
 const getupdatepage = (req,res)=>
 {
    res.render('updatepage')
@@ -116,22 +116,12 @@ const getthankspage = async (req,res)=>
 
 
 
-/*
-const taketransactionid = async (req,res)=>
-{
-    console.log("Transaction Chal rha hai")
-   
-    const sid='63f891689b9c5bfb246663dd';
-    console.log(sid)
-    const transactionID =req.body.payment
-    const payment =req.body.payment
-    const trid = await studentModel.findByIdAndUpdate({_id:sid},{$set:{transactionID:transactionID,payment:payment}})
-    res.send(trid)
-}
-*/
+
 module.exports={
   postuiuxform,
-  getthankspage
+  getthankspage,
+ 
+
  // taketransactionid,
   //getupdatepage
   
