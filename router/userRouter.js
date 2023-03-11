@@ -12,6 +12,7 @@ userRouter.use(session({secret:"mysessionsite"}))
 userRouter.get("/login",userController.getLoginpage)
 userRouter.get("/signup",userController.getsignup)
 userRouter.post("/signup",userController.adduser)
+userRouter.get("/verify",userController.verifymail)
 //userRouter.post("/login",userController.loginuser)
 module.exports = {
     userRouter

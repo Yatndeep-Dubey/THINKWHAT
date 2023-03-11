@@ -1,5 +1,8 @@
+require('dotenv').config()
 const userModel = require("../model/userModel")
-
+const nodemailer = require('nodemailer');
+const adminmail = process.env.SMAIL
+const adminpass = process.env.SPASS
 const getLoginpage = async (req,res)=>
 {
     try{
@@ -13,7 +16,7 @@ const getLoginpage = async (req,res)=>
 const getsignup = async (req,res)=>
 {
     try{
-             res.render('usersignup')
+             res.render('usersignup',{message:undefined,vmessage:undefined})
     }
     catch(error)
     {
@@ -22,27 +25,30 @@ const getsignup = async (req,res)=>
 }
 const adduser = async (req,res)=>
 {
+    
     const name = req.body.name
     const email = req.body.email
     const password=req.body.password
     const confirmpassword = req.body.cpassword
+
       // check if the are empty 
       if (!email || !name || !password || !confirmpassword) 
       {
-        res.render("usersignup", { err: "All Fields Required !"});
+        res.render("usersignup", { message: "All Fields Required !"});
     } 
     else if (password != confirmpassword)
      {
-        res.render("usersignup", { err: "Password Don't Match !"});
+        res.render("usersignup", { message: "Password Don't Match !"});
      }
 
      else{
         const user = await userModel.findOne({email:email})
         if(user)
         {
-            res.render('usersignup',{err:"User Already Exist"})
+            res.render('usersignup',{message:"User Already Exist"})
         }
         else{
+
             try
         {
 
@@ -52,8 +58,13 @@ const adduser = async (req,res)=>
             email:req.body.email,
             password:req.body.password
           });
+          
           const userData = await singleuser.save();
-           res.render('usersignup',{err:"Added Successfully"})
+          const receiver = userData.email;
+          const user_id =userData._id;
+          sendmail2(receiver,user_id);
+           res.render('usersignup',{message:"verification"})
+
     }
     catch(error)
     {
@@ -63,6 +74,56 @@ const adduser = async (req,res)=>
     
 }
 }
+
+const smail=adminmail;
+const spass=adminpass;
+
+// MAil ka khel....................
+const sendmail2 = async (receiver,user_id)=>
+{
+    
+    console.log(receiver)
+    console.log(user_id)
+var subjectto = "Verificaton  Email"
+var message = "Verify Your Email With ThinkWhat"
+console.log(subjectto + ' ' + message + ' ' + receiver)
+let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+        user: smail, // generated ethereal user
+        pass: spass // generated ethereal password
+    }
+}); 
+//Sending mail to provided emailid
+let info = transporter.sendMail({
+        from: smail, // sender address
+        to: receiver, // list of receivers
+        subject: subjectto, // Subject line
+        html: message+'<a href="http://localhost:3000/verify?id='+user_id+'">Click Here To Verify</a>'
+       
+    },
+    function(error) {
+        
+        console.log(error.message)
+    })
+
+}
+const verifymail = async(req,res)=>
+{
+    
+    try{
+        const vuser = await userModel.updateOne({_id:req.query.id},{$set:{is_verified:1}});
+        console.log(vuser);
+        res.send('Email Verified')
+    }
+    catch(error)
+    {
+         console.log(error.message);
+    }
+}
+//sendmail();
 /*
 const loginuser = async (req,res)=>
 {
@@ -98,5 +159,6 @@ module.exports = {
     getLoginpage,
     getsignup,
     adduser,
+    verifymail
    // loginuser
 }

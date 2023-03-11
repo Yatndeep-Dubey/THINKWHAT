@@ -1,46 +1,6 @@
 const courseModel = require('../model/courseModel')
 const studentModel = require('../model/studentModel')
-const getfrontend = async (req,res)=>
-{
-    const uname=req.query.uname;
-    res.render('frontend',{message:uname})
-}
-const getbackend = async (req,res)=>
-{
-    const uname = req.query.uname;
-     res.render('backend',{message:uname})
-}
-const getcloud = async (req,res)=>
-{
-    const uname =req.query.uname
-        res.render('cloud',{message:uname})
-}
-const getuiux = async (req,res)=>
-{
-       const uname = req.query.uname;
-       res.render('uiux',{message:uname})
-}
-const getflutter = async (req,res)=>
-{
-    const uname = req.query.uname;
-       res.render('flutter',{message:uname},)
-}
-const getReact = async (req,res)=>
-{
-    const uname = req.query.uname;
-     res.render('react',{message:uname})
 
-}
-const getAngular = async (req,res)=>
-{
-    const uname = req.query.uname;
-     res.render('Angular',{message:uname})
-}
-const getdsa = async (req,res)=>
-{
-    const uname = req.query.uname;
-    res.render('dsa',{message:uname})
-}
 
 const postcourse = async (req,res)=>
 {
@@ -75,14 +35,7 @@ const getcoursedetails= async (req,res)=>
 }
 */
 module.exports = {
-    getfrontend,
-    getAngular,
-    getReact,
-    getbackend,
-    getcloud,
-    getflutter,
-    getuiux,
-    getdsa,
+    
    // postcourse,
    // addstudentincourse,
    // getcoursedetails

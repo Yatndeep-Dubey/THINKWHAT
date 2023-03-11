@@ -1,5 +1,54 @@
+require('dotenv').config()
 const { find } = require('../model/studentModel');
 const studentModel = require('../model/studentModel')
+const nodemailer = require('nodemailer')
+
+const adminmail = process.env.SMAIL
+const adminpass = process.env.SPASS
+
+
+//mail ka khel
+const sendmail2 = async (receiver)=>
+{
+    const smail=adminmail;
+    const spass= adminpass;
+    console.log(receiver)
+    
+    var subjectto = "Course Enrollment"
+    var message = "You will shortly recieve your invoice of payment and our team will reach you soon"
+    console.log(subjectto + ' ' + message + ' ' + receiver)
+    let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+        user: smail, // generated ethereal user
+        pass: spass // generated ethereal password
+    }
+}); 
+//Sending mail to provided emailid
+let info = transporter.sendMail({
+        from: smail, // sender address
+        to: receiver, // list of receivers
+        subject: subjectto, // Subject line
+        html: message
+       
+    },
+    function(error) {
+        
+        console.log(error.message)
+    })
+
+}
+
+
+
+
+
+
+
+
+
 const postuiuxform = async (req,res)=>
 {
     const singleStudent = new studentModel(
@@ -19,25 +68,13 @@ const postuiuxform = async (req,res)=>
         }
     )
     try{
-        var letters = /^[a-zA-Z]*$/;
-        var stname =singleStudent.name;
-        var mob = singleStudent.mobile;
+        
+        
+         const userdata = await singleStudent.save(); 
+         const receiver= userdata.email;   
+          sendmail2(receiver);
+         res.render('thanks');
 
-        if(stname.match(letters))
-        {
-            
-            if(`${mob}`.length==10)
-            {
-              
-                console.log("sahi hai")
-            }
-            else{
-                console.log("10 digit ka number dal")
-            }
-        }
-        else{
-            console.log("name should be in alphabetical form")
-        }
 }
 
 catch(error)
@@ -51,6 +88,34 @@ const getupdatepage = (req,res)=>
 {
    res.render('updatepage')
 }
+
+const getthankspage = async (req,res)=>
+{
+    res.render('thanks')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 const taketransactionid = async (req,res)=>
 {
@@ -66,6 +131,7 @@ const taketransactionid = async (req,res)=>
 */
 module.exports={
   postuiuxform,
+  getthankspage
  // taketransactionid,
   //getupdatepage
   
