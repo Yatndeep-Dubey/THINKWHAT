@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThinkWh?t</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+   
+      <nav class="shadow-sm px-2  bg-light top-0 lg:py-2">
+        <!-- for large screens -->
+        <div
+          class="hidden md:flex justify-between items-center lg:justify-evenly"
+        >
+        
+          <img src="./public/images/logo.png" alt="logo image" class="h-20" />
+          <div
+            class="flex border bg-white py-2 px-3 gap-2 rounded-full items-center lg:py-3 lg:px-5"
+          >
+            <img src="./public/images/searchButton.png" class="h-5" />
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-none focus:outline-none bg-transparent w-20 lg:w-52"
+            />
+          </div>
+
+          <div>
+            <ul class="flex text-lg gap-3 items-center lg:gap-14 lg:text-xl">
+              <a href="/" class="group hover:font-bold">
+                <li>Home</li>
+                <div
+                  class="hidden bg-dark h-1 w-1 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+              <a href="/about" class="group hover:font-bold">
+                <li>About</li>
+                <div
+                  class="hidden bg-dark h-1 w-1 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+              <a href="/contact" class="group hover:font-bold">
+                <li>Contact</li>
+                <div
+                  class="hidden bg-dark h-1 w-1 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+            </ul>
+          </div>
+
+          <% if (message == undefined)
+          { %>
+            <div class="gap-3 flex lg:gap-10 ">
+                <div>
+                  <a href="/login">
+                    <button
+                      class="color-primary bg-white py-3 px-3 mx-5 xl:w-[150px] md:w-[100px] rounded-full items-center space-x-3 text-lg  group hover:font-bold"
+                    >
+                      Login
+                    </button>
+                  </a>
+                </div>
+    
+                <div>
+                  <a href="/signup">
+                    <button
+                      class="bg-dark text-white py-3 px-3 mx-5 xl:w-[150px] md:w-[100px] rounded-full items-center space-x-3 text-lg   group hover:font-bold"
+                    >
+                      Sign Up
+                    </button>
+                  </a>
+                </div>
+              </div>
+          <%}%>
+         
+        </div>
+
+        <!-- mob nav -->
+        <nav class="navbar md:hidden">
+        <div class="flex justify-between  items-center md:hidden">
+          <div class="flex gap-5 items-center">
+            <div>
+              <img src="./public/images/logo.png" alt="logo image" class="h-20 w-20" />
+            </div>
+
+            <div
+              class="flex border bg-white py-2 px-3 gap-2 rounded-full items-center h-fit"
+            >
+              <img src="./public/images/searchButton.png" class="h-5" />
+              <input
+                type="text"
+                placeholder="Search"
+                class="border-none focus:outline-none bg-transparent w-20 sm:w-40"
+              />
+            </div>
+          </div>
+
+          <!-- hamburger -->
+          <div onclick="this.classList.toggle('active')" class="burger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              viewBox="0 0 200 200"
+              class="cursor-pointer"
+            >
+              <g stroke-width="6.5" stroke-linecap="round">
+                <path
+                  d="M72 82.286h28.75"
+                  fill="#009100"
+                  fill-rule="evenodd"
+                  stroke="rgb(39, 84, 115)"
+                />
+                <path
+                  d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                  fill="none"
+                  stroke="rgb(39, 84, 115)"
+                />
+                <path
+                  d="M72 125.143h28.75"
+                  fill="#009100"
+                  fill-rule="evenodd"
+                  stroke="rgb(39, 84, 115)"
+                />
+                <path
+                  d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                  fill="none"
+                  stroke="rgb(39, 84, 115)"
+                />
+                <path
+                  d="M100.75 82.286h28.75"
+                  fill="#009100"
+                  fill-rule="evenodd"
+                  stroke="rgb(39, 84, 115)"
+                />
+                <path
+                  d="M100.75 125.143h28.75"
+                  fill="#009100"
+                  fill-rule="evenodd"
+                  stroke="rgb(39, 84, 115)"
+                />
+              </g>
+            </svg>
+          </div>
+
+          <!-- insert mob menu below -->
+        </div>
+        <div class="nav-list op  flex flex-col justify-center items-center">
+          
+            <ul class="opn text-lg  font-bold space-y-5 gap-5">
+                <a href="/" class="group hover:font-bold">
+                  <li>Home</li>
+                  <div
+                    class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                  ></div>
+                </a>
+                <a href="/about" class="group hover:font-bold">
+                  <li>About</li>
+                  <div
+                    class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                  ></div>
+                </a>
+                <a href="/contact" class="group hover:font-bold">
+                  <li>Contact</li>
+                  <div
+                    class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                  ></div>
+                </a>
+                <a href="/login" class="group hover:font-bold">
+                    <li>Login</li>
+                    <div
+                      class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                    ></div>
+                  </a>
+                  <a href="/signup" class="group hover:font-bold">
+                    <li>Sign Up</li>
+                    <div
+                      class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                    ></div>
+                  </a>
+              </ul>
+        </div>
+        </nav>
+      </nav>
+
+      <!-- hero section -->
+
+      <!-- for large screens-->
+      
+ 
+    <script>
+      const burger = document.querySelector('.burger')
+         const navbar= document.querySelector('.navbar')
+         const opn = document.querySelector('.opn')
+         burger.addEventListener('click',()=>
+         {
+           navbar.classList.toggle('v-class')
+           opn.classList.toggle('h-nav')
+         })
+     </script>
+  </body>
+</html>

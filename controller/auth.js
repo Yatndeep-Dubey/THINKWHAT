@@ -35,11 +35,11 @@ app.use(passport.initialize());
 
 app.get("/contact",(req,res)=>
 {
-    res.render('contact')
+    res.render('contact',{message:req.session.userProfile})
 })
 app.get("/about",(req,res)=>
 {
-    res.render('about')
+    res.render('about',{message:req.session.userProfile})
 })
 
 
@@ -217,19 +217,20 @@ const getflutter = async (req,res)=>
 }
 const getReact = async (req,res)=>
 {
-     res.render('react',{username:req.session.userProfile,usermail:req.sessionuserEmail})
+     res.render('react',{username:req.session.userProfile,usermail:req.session.userEmail})
 
 }
 const getAngular = async (req,res)=>
 {
     
-     res.render('Angular',{username:req.session.userProfile,usermail:req.sessionuserEmail})
+     res.render('Angular',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
 const getdsa = async (req,res)=>
 {
     
-    res.render('dsa',{username:req.session.userProfile,usermail:req.sessionuserEmail})
+    res.render('dsa',{username:req.session.userProfile,usermail:req.session.userEmail})
 }
+
 app.get('/logout', (req, res, next) => {
     // manually set cookie headers, cause `req.logout` does not work
     // req.logout()

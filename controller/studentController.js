@@ -51,6 +51,7 @@ let info = transporter.sendMail({
 
 const postuiuxform = async (req,res)=>
 {
+    
     const singleStudent = new studentModel(
         {
             name:req.body.name,
@@ -72,8 +73,8 @@ const postuiuxform = async (req,res)=>
         
          const userdata = await singleStudent.save(); 
          const receiver= userdata.email;   
-          sendmail2(receiver);
-         res.render('thanks');
+        //  sendmail2(receiver);
+         res.render('thanks',{username:singleStudent.name});
 
    }
 
@@ -91,7 +92,7 @@ const getupdatepage = (req,res)=>
 
 const getthankspage = async (req,res)=>
 {
-    res.render('thanks')
+    res.render('thanks',{username:"kuchbhi"})
 }
 
 

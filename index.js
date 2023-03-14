@@ -35,17 +35,10 @@ app.listen(port,()=>
    app.set("view engine","ejs")
    app.set('views','./views')
    app.use("/public/images",express.static('./public/images'));
+   app.use('/assets',express.static('assets'));
 // showing main page
 
-app.get("/contact",(req,res)=>
-{
-    req.session.viewCount +=1;
-    res.send("Your visited times"+req.session.viewCount)
-})
-app.get("/about",(req,res)=>
-{
-    res.render('about')
-})
+
 app.use("/course",courseRouter.courseRouter)
 app.use("/student",studentRouter.studentRouter)
 app.use("/",userRouter.userRouter)

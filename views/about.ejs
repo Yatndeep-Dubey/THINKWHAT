@@ -1,12 +1,294 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWAbout</title>
-</head>
-<body>
-    <h1>Shree Ganeshay Namah </h1>
-</body>
-</html>
+<%-include('partials/header')-%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <style>
+        .teams .carousel .card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 25px 35px;
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-item img {
+            display: block;
+            width: 40px;
+        }
+
+        .teams .carousel .card:hover {
+            background: #D8E3E7;
+        }
+
+        .teams .carousel .card .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .teams .carousel .card:hover .box {
+            transform: scale(1.05);
+        }
+
+        .teams .carousel .card .text {
+            font-size: 25px;
+            font-weight: 500;
+            margin: 10px 0 7px 0;
+        }
+
+        .teams .carousel .card p {
+            font-size: 16px;
+        }
+
+        .teams .carousel .card .imgc {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .teams .carousel .card:hover .imgc {
+            border-color: #fff;
+        }
+
+        .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .owl-dot {
+            height: 20px;
+            width: 13px;
+            margin: 0 5px;
+            outline: none !important;
+            border-radius: 50%;
+            border: 2px solid rgb(39, 84, 115) !important;
+            transition: all 0.3s ease;
+        }
+
+        .owl-dot.active {
+            width: 35px;
+            border-radius: 14px;
+        }
+
+        .owl-dot.active,
+        .owl-dot:hover {
+            background: rgb(39, 84, 115) !important;
+        }
+    </style>
+
+    <!--vedioo section-->
+
+    <h1 class="font-bold text-center text-3xl mt-5 color-primary ">Our Vision</h1>
+    <div class="flex flex-col  items-center  md:flex md:flex-row ">
+
+        <!--VEdio-->
+        <div>
+            <div
+                class="shadow-2xl flex justify-center flex-col w-[300px] xl:w-[600px] xl:h-[300px] h-[200px]  items-center  rounded-xl bg-white m-7">
+
+            </div>
+        </div>
+        <!--content-->
+        <div class="w-fit">
+            <p>
+                We are a technology company on
+                a mission to equip students with relevant skills & practical
+                exposure to help them get the best possible start to their careers.
+                Imagine a world full of freedom and possibilities. A world where you can
+                discover your passion and turn it into your career.
+                A world where you graduate fully assured, confident, and prepared to stake a claim on your place in the
+                world.
+            </p>
+        </div>
+    </div>
+
+    <!--why Thinkwhat.....-->
+    <h1 class="color-primary text-center font-bold text-2xl">Why ThinkWhat? </h1>
+
+    <div
+        class=" flex flex-col md:flex md:flex-row w-fit px-10 shadow-2xl items-center rounded-xl py-10 gap-10 md:space-x-10 ">
+        <!--first image-->
+        <div class=" flex items-center flex-col">
+            <img src="../public/images/learnwithus.jfif" class="w-[300px] h-[250px]">
+            <p class="font-bold text-xl">Learn With Us </p>
+            <p class="text-center">
+                Learn new-age skills on the go with our short-term online trainings
+            </p>
+        </div>
+        <!--second image-->
+        <div class="  flex items-center flex-col">
+            <img src="../public/images/growwithus.jfif" class="w-[300px] h-[250px]">
+            <p class="font-bold text-xl">Grow With Us </p>
+            <p class="text-center">
+                Learn new-age skills on the go with our short-term online trainings
+            </p>
+        </div>
+        <!--third image-->
+        <div class="flex items-center  flex-col">
+            <img src="../public/images/internwithus.jfif" class="w-[300px] h-[250px]">
+            <p class="font-bold md:text-xl text-[15px]">Internship Opportunities</p>
+            <p class="text-center">
+                Learn new-age skills on the go with our short-term online trainings
+            </p>
+        </div>
+    </div>
+
+
+    <h1 class="color-primary font-bold text-3xl text-center mt-10 mb-10">Our LeadaerShip</h1>
+
+
+    <section class="teams px-10 mb-10" id="teams">
+        <div class="max-width">
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="../public/images/vishal.jfif" alt="" class="imgc">
+                        <div class="text">Vishal Chaurasia</div>
+                        <p>Co-Founder & CEO</p>
+                        <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                    </div>
+                </div>
+                
+                    <div class="card">
+                        <div class="box">
+                            <img src="../public/images/yatn.jfif" alt="" class="imgc">
+                            <div class="text">Yatndeep Dubey</div>
+                            <p>Co-Founder & CTO</p>
+                            <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                        </div>
+                    </div>
+                    
+                        <div class="card">
+                            <div class="box">
+                                <img src="../public/images/anusha.jfif" alt="" class="imgc">
+                                <div class="text">Anusha Verma</div>
+                                <p>UI/UX Designer</p>
+                                <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                            </div>
+                        </div>
+                        
+                            <div class="card">
+                                <div class="box">
+                                    <img src="../public/images/kirti.jfif" alt="" class="imgc">
+                                    <div class="text">Prakriti Gupta</div>
+                                    <p>Content Writer</p>
+                                    <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                                </div>
+                            </div>
+                            
+                                <div class="card">
+                                    <div class="box">
+                                        <img src="../public/images/sarita.jfif" alt="" class="imgc">
+                                        <div class="text">Sarita Singh</div>
+                                        <p>Management</p>
+                                        <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                                    </div>
+                                </div>
+                              
+                                    <div class="card">
+                                        <div class="box">
+                                            <img src="../public/images/profile-rachit.png" alt="" class="imgc">
+                                            <div class="text">Rachit Bhardwaj</div>
+                                            <p>Frontend Developer</p>
+                                            <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                                        </div>
+                                    </div>
+                                    
+                                        <div class="card">
+                                            <div class="box">
+                                                <img src="../public/images/ram mohar.jfif" alt="" class="imgc">
+                                                <div class="text">Ram Mohar</div>
+                                                <p>Graphic Designer</p>
+                                                <img src="../public/images/icons8-linkedin.gif" class="h-10 w-[20px]" />
+                                            </div>
+                              
+                                        </div>
+            </div>
+             </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // sticky navbar on scroll script
+                if (this.scrollY > 20) {
+                    $('.navbar').addClass("sticky");
+                } else {
+                    $('.navbar').removeClass("sticky");
+                }
+
+                // scroll-up button show/hide script
+                if (this.scrollY > 500) {
+                    $('.scroll-up-btn').addClass("show");
+                } else {
+                    $('.scroll-up-btn').removeClass("show");
+                }
+            });
+
+            // slide-up script
+            $('.scroll-up-btn').click(function () {
+                $('html').animate({ scrollTop: 0 });
+                // removing smooth scroll on slide-up button click
+                $('html').css("scrollBehavior", "auto");
+            });
+
+            $('.navbar .menu li a').click(function () {
+                // applying again smooth scroll on menu items click
+                $('html').css("scrollBehavior", "smooth");
+            });
+
+            // toggle menu/navbar script
+            $('.menu-btn').click(function () {
+                $('.navbar .menu').toggleClass("active");
+                $('.menu-btn i').toggleClass("active");
+            });
+
+            // owl carousel script
+            $('.carousel').owlCarousel({
+                margin: 20,
+                loop: true,
+                autoplay: true,
+                autoplayTimeOut: 1000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false
+                    }
+                }
+            });
+        });  
+    </script>
+    <link rel="stylesheets" src="./assets/style.css">
+    <%-include('partials/footer')-%>
